@@ -4,6 +4,7 @@ class PermMissingElem {
         int[] A = new int[10];
         System.out.println(solution(A));
     }
+    //using hashing (extra array)
     public static int solution(int[] A) {
         // Implement your solution here
         int B[] = new int[A.length+2];
@@ -21,4 +22,18 @@ class PermMissingElem {
         }
         return 1;
     }
+
+    // using sum of n natural numbers formula - sum of elements of array
+    public int solution1(int[] A) {
+        // Implement your solution here
+        long maxNumber = A.length+1;
+        long actualSum =0;
+        long expectedSum = maxNumber*(maxNumber+1)/2;
+        for(int i=0; i<A.length; i++){
+            actualSum = actualSum + A[i];
+        }
+        return (int) (expectedSum - actualSum);
+    }
+
+
 }
