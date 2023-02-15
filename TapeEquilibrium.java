@@ -3,7 +3,7 @@ import java.util.*;
 public class TapeEquilibrium {
     public static void main(String[] args){
         int[] A = new int[]{3,1,2,4,3};
-        System.out.println(solution(A));
+        System.out.println(solution1(A));
     }
     //O(n*n) first approach
     public static int solution(int[] A) {
@@ -25,5 +25,30 @@ public class TapeEquilibrium {
             }
         }//outer loop
         return result;
+    }
+
+    // optimized approach O(n)
+    public static int solution1(int[] A) {
+        // Implement your solution here
+        int leftSum = A[0];
+        int rightSum = 0;
+        int min = Integer.MAX_VALUE;
+        int temp = 0;
+        for(int x : A){
+            rightSum = rightSum + x;
+        }
+        rightSum = rightSum - leftSum;
+        temp = Math.abs(leftSum - rightSum);
+        if(temp<min)
+        min = temp;
+        for(int i=1; i<A.length; i++){
+            temp = Math.abs(leftSum - rightSum);
+            if(temp<min)
+            min = temp;
+            rightSum = rightSum - A[i];
+            leftSum = leftSum + A[i];
+            
+        }
+        return min;
     }
 }
