@@ -5,7 +5,7 @@ public class FrogRiverOne {
         //[1,3,1,4,2,3,5,4]
         // 0 1 2 3 4 5 6 7
         //uncomment for single position scenario
-        int A[] = new int[1];
+        int A[] = new int[]{1};
         int K = 1;
         int result = new FrogRiverOne().solution(K, A);
         System.out.print(result);
@@ -19,9 +19,10 @@ public class FrogRiverOne {
             if(counter != 0 && newArray[A[i]] != 1){
                 counter--;
                 newArray[A[i]] = 1;
+                if(counter == 0)
+                return i;
             }
-            if(counter == 0)
-              return i;
+           
         }
         return -1;
     }
