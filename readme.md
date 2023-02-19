@@ -5,3 +5,6 @@ Probem02 [TapeEquilibrium](https://app.codility.com/programmers/lessons/3-time_c
 
 Probem03 [CyclicRotation](https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/)
 
+Probem04 [FrogRiverOne](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/)
+
+
