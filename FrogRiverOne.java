@@ -12,14 +12,12 @@ public class FrogRiverOne {
     }
 
     public int solution(int X, int A[]){
-
-        int counter = X;
-        int newArray[] = new int[A.length+1];
+        int newArray[] = new int[X+1];
         for(int i=0; i<A.length; i++){
-            if(counter != 0 && newArray[A[i]] != 1){
-                counter--;
+            if(X != 0 && newArray[A[i]] != 1){
+                X--;
                 newArray[A[i]] = 1;
-                if(counter == 0)
+                if(X == 0)
                 return i;
             }
            
