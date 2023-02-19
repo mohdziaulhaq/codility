@@ -7,4 +7,4 @@ Probem03 [CyclicRotation](https://app.codility.com/programmers/lessons/2-arrays/
 
 Probem04 [FrogRiverOne](https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/)
 
-
+Probem05 [MaxCounters](https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/)
