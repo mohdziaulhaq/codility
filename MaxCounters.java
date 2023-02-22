@@ -1,3 +1,6 @@
+import java.lang.Thread.State;
+import java.util.concurrent.CountDownLatch;
+
 public class MaxCounters {
     public static void main(String[] args) {
         // int A[] = new int[]{1,1,1};
@@ -8,19 +11,21 @@ public class MaxCounters {
     }
     public int[] solution(int N, int[] A){
         int result[] = new int[N];
-        int maxCounter =0;
+        int currentMax =0;
+        int startLine = 0;
         int temp;
         for(int i=0; i<A.length; i++){
-            if(A[i]<= N){
-                temp = result[A[i]-1] += 1;
-                if(temp >maxCounter){
-                    maxCounter = temp;
-                }
-            }else if(A[i] > N){
-                for(int j=0; j< result.length; j++){
-                    result[j] = maxCounter;
-                }
-            }
+
+            //new logic
+            int x = A[i]-1;
+            if(A[i] > N) startLine = currentMax;
+            else if(result[x] < startLine)  result[x] = startLine+1;
+            else 
+            if(A[i] <= N && result[x] > currentMax) currentMax = result[x];
+        }
+        for(int i=0; i<result.length; i++){
+            if(result[i] < startLine)
+            result[i] = startLine;
         }
         return result;
     }
